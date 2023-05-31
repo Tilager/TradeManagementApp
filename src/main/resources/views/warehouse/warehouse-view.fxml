@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Font?>
+<AnchorPane xmlns:fx="http://javafx.com/fxml/1" prefHeight="497.0" prefWidth="987.0" xmlns="http://javafx.com/javafx/19"
+            fx:controller="ru.tigran.zakaz.controllers.warehouse.WarehouseController">
+    <SplitPane dividerPositions="0.2" prefHeight="497.0" prefWidth="987.0" AnchorPane.bottomAnchor="15.0"
+               AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="15.0">
+        <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" spacing="20.0">
+            <Button mnemonicParsing="false" onMouseClicked="#addProductBTNClicked"
+                    prefHeight="72.0" prefWidth="146.0" text="Добавить товар" textAlignment="CENTER"
+                    wrapText="true">
+                <font>
+                    <Font size="18.0"/>
+                </font>
+            </Button>
+            <Button focusTraversable="false" mnemonicParsing="false" onMouseClicked="#leaveBtnClick"
+                    prefHeight="72.0" prefWidth="146.0" text="Выйти в главное меню" textAlignment="CENTER"
+                    wrapText="true">
+                <font>
+                    <Font size="18.0"/>
+                </font>
+            </Button>
+        </VBox>
+        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="199.0" prefWidth="199.0">
+            <GridPane layoutX="112.0" layoutY="67.0" prefHeight="495.0"
+                      prefWidth="785.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0"
+                      AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                <columnConstraints>
+                    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0"/>
+                </columnConstraints>
+                <rowConstraints>
+                    <RowConstraints maxHeight="243.0" minHeight="10.0" prefHeight="67.0" vgrow="SOMETIMES"/>
+                    <RowConstraints maxHeight="428.0" minHeight="10.0" prefHeight="428.0"
+                                    vgrow="SOMETIMES"/>
+                </rowConstraints>
+                <children>
+                    <AnchorPane prefHeight="200.0" prefWidth="200.0">
+                        <children>
+                            <Label layoutX="332.0" layoutY="7.0" text="Склад">
+                                <font>
+                                    <Font size="40.0"/>
+                                </font>
+                            </Label>
+                        </children>
+                    </AnchorPane>
+                    <TableView fx:id="warehouseTV" onKeyPressed="#onKeyPressedTV"
+                               onMouseClicked="#tvMouseClicked" prefHeight="200.0" prefWidth="200.0"
+                               GridPane.rowIndex="1">
+                        <columns>
+                            <TableColumn fx:id="imageTC" prefWidth="115.0" text="Фотография"/>
+                            <TableColumn fx:id="nameTC" prefWidth="146.0" text="Название"/>
+                            <TableColumn fx:id="descriptionTC" prefWidth="267.0" text="Описание"/>
+                            <TableColumn fx:id="countTC" prefWidth="82.0" text="Количество"/>
+                            <TableColumn fx:id="purchasingPriceTC" prefWidth="74.0" text="Цена З."/>
+                            <TableColumn fx:id="retailPrice" prefWidth="76.0" text="Цена П."/>
+                        </columns>
+                    </TableView>
+                </children>
+            </GridPane>
+        </AnchorPane>
+    </SplitPane>
+</AnchorPane>
