@@ -16,6 +16,6 @@ public class ProductModel {
 
     private String provider;
 
-    @OneToOne(mappedBy = "product")
+    @OneToOne(mappedBy = "product", fetch = FetchType.EAGER)
     private WarehouseModel warehouse;
 }

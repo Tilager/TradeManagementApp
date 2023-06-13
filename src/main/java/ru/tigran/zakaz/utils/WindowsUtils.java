@@ -5,6 +5,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.input.MouseEvent;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -68,6 +69,19 @@ public class WindowsUtils {
         catch (IOException e) {
             e.printStackTrace();
         }
+    }
+
+    public static Stage openModalWindowWithController(Event event, FXMLLoader fxmlLoader) throws IOException {
+        Parent page = fxmlLoader.load();
+        Stage dialogStage = new Stage();
+        Stage primaryStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        dialogStage.setTitle("Приложение Regalo");
+        dialogStage.initModality(Modality.WINDOW_MODAL);
+        dialogStage.initOwner(primaryStage);
+
+        Scene scene = new Scene(page);
+        dialogStage.setScene(scene);
+        return dialogStage;
     }
 
     public static FXMLLoader getFxmlLoaderWithSpringContext(String view) {

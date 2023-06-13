@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="497.0" prefWidth="874.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ru.tigran.zakaz.controllers.sales.SaleController">
+   <children>
+      <SplitPane dividerPositions="0.2" prefHeight="467.0" prefWidth="881.0" AnchorPane.bottomAnchor="15.0" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="15.0">
+         <items>
+            <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" spacing="20.0">
+               <children>
+                  <Button mnemonicParsing="false" onMouseClicked="#saleProductBTNClicked" prefHeight="72.0" prefWidth="146.0" text="Продать товар" textAlignment="CENTER" wrapText="true">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Button>
+                  <Button focusTraversable="false" mnemonicParsing="false" onMouseClicked="#leaveBtnClick" prefHeight="72.0" prefWidth="146.0" text="Выйти в главное меню" textAlignment="CENTER" wrapText="true">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Button>
+               </children>
+            </VBox>
+            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="465.0" prefWidth="710.0">
+               <children>
+                  <GridPane layoutX="112.0" layoutY="67.0" prefHeight="465.0" prefWidth="612.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="0.0">
+                     <columnConstraints>
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                     </columnConstraints>
+                     <rowConstraints>
+                        <RowConstraints maxHeight="243.0" minHeight="10.0" prefHeight="67.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="428.0" minHeight="10.0" prefHeight="428.0" vgrow="SOMETIMES" />
+                     </rowConstraints>
+                     <children>
+                        <AnchorPane prefHeight="200.0" prefWidth="200.0">
+                           <children>
+                              <Label layoutX="122.0" layoutY="2.0" text="Проданные товары">
+                                 <font>
+                                    <Font size="40.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </AnchorPane>
+                        <TableView fx:id="salesTV" onKeyPressed="#onKeyPressedTV" GridPane.rowIndex="1">
+                           <columns>
+                              <TableColumn fx:id="nameTC" prefWidth="230.0" text="Название" />
+                              <TableColumn fx:id="countTC" minWidth="0.0" prefWidth="104.0" text="Количество" />
+                              <TableColumn fx:id="priceTC" prefWidth="96.0" text="Цена" />
+                              <TableColumn fx:id="dateTC" prefWidth="97.0" text="Дата продажи" />
+                              <TableColumn fx:id="actionTC" prefWidth="118.0" text="Действие" />
+                           </columns>
+                        </TableView>
+                     </children>
+                  </GridPane>
+               </children>
+               <padding>
+                  <Insets bottom="10.0" left="10.0" />
+               </padding>
+            </AnchorPane>
+         </items>
+      </SplitPane>
+   </children>
+</AnchorPane>

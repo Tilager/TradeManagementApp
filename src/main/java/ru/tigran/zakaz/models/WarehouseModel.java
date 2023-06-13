@@ -24,7 +24,7 @@ public class WarehouseModel{
     @JoinColumn(name = "product_id", referencedColumnName = "id", unique = true)
     private ProductModel product;
 
-    @OneToMany(mappedBy = "warehouse", cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "warehouse")
     private List<SaleModel> sales;
 
 

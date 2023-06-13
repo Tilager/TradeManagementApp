@@ -27,4 +27,10 @@ public class SalesService {
     public SaleModel getById(int id) { return salesRepository.findById(id).orElse(null); }
 
     public void removeById(int id) { salesRepository.deleteById(id); }
+
+    public void remove(SaleModel sale) { salesRepository.delete(sale); }
+
+    public void removeByListObjects(List<SaleModel> removedProducts) {
+        salesRepository.deleteAll(removedProducts);
+    }
 }

@@ -101,12 +101,12 @@ public class WarehouseController implements Initializable {
                 return new TableCell<>() {
                     @Override
                     protected void updateItem(ProductModel s, boolean b) {
-                        super.updateItem(s, b);
+                    super.updateItem(s, b);
 
-                        if (b || s == null)
-                            setGraphic(null);
-                        else
-                            setGraphic(new Label(s.getName()));
+                    if (b || s == null)
+                        setGraphic(null);
+                    else
+                        setGraphic(new Label(s.getName()));
                     }
                 };
             }
@@ -145,7 +145,7 @@ public class WarehouseController implements Initializable {
         if (mouseEvent.getClickCount() == 2 && warehouseTV.getSelectionModel().getSelectedItems().size() == 1) {
             FXMLLoader fxmlLoader = WindowsUtils.getFxmlLoaderWithSpringContext("warehouse/edit-view.fxml");
 
-            Stage dialogStage = openModalWindowWithController(mouseEvent, fxmlLoader);
+            Stage dialogStage = WindowsUtils.openModalWindowWithController(mouseEvent, fxmlLoader);
             EditController editController = fxmlLoader.getController();
             editController.setWarehouseModel(warehouseTV.getSelectionModel().getSelectedItem());
             dialogStage.showAndWait();
@@ -156,26 +156,13 @@ public class WarehouseController implements Initializable {
     public void addProductBTNClicked(MouseEvent mouseEvent) throws IOException {
         FXMLLoader fxmlLoader = WindowsUtils.getFxmlLoaderWithSpringContext("warehouse/add-view.fxml");
 
-        Stage dialogStage = openModalWindowWithController(mouseEvent, fxmlLoader);
+        Stage dialogStage = WindowsUtils.openModalWindowWithController(mouseEvent, fxmlLoader);
 
         AddController addController = fxmlLoader.getController();
         addController.setAllWarehouse(allWarehouse);
 
         dialogStage.showAndWait();
         warehouseTV.refresh();
-    }
-
-    private Stage openModalWindowWithController(MouseEvent mouseEvent, FXMLLoader fxmlLoader) throws IOException {
-        Parent page = fxmlLoader.load();
-        Stage dialogStage = new Stage();
-        Stage primaryStage = (Stage) ((Node) mouseEvent.getSource()).getScene().getWindow();
-        dialogStage.setTitle("Приложение Regalo");
-        dialogStage.initModality(Modality.WINDOW_MODAL);
-        dialogStage.initOwner(primaryStage);
-
-        Scene scene = new Scene(page);
-        dialogStage.setScene(scene);
-        return dialogStage;
     }
 
     public void onKeyPressedTV(KeyEvent keyEvent) {

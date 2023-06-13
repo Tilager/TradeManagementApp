@@ -35,4 +35,8 @@ public class ProductsService {
     public void removeByListObjects(List<ProductModel> productModelList) {
         productRepository.deleteAll(productModelList);
     }
+
+    public List<ProductModel> getAllProductsInStock() {
+        return productRepository.findAllProductsInStock();
+    }
 }

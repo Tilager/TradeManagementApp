@@ -20,4 +20,8 @@ public class MainController{
     public void productManagementBTNClick(MouseEvent event) {
         WindowsUtils.openNewWindow("products/product-view.fxml", event);
     }
+
+    public void salesButtonClick(MouseEvent event) {
+        WindowsUtils.openNewWindow("sales/sale-view.fxml", event);
+    }
 }
