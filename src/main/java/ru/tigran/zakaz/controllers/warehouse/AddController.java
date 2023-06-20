@@ -17,6 +17,7 @@ import ru.tigran.zakaz.models.ProductModel;
 import ru.tigran.zakaz.models.WarehouseModel;
 import ru.tigran.zakaz.services.ProductsService;
 import ru.tigran.zakaz.services.WarehouseService;
+import ru.tigran.zakaz.utils.Alerts;
 
 import java.io.ByteArrayInputStream;
 import java.io.File;
@@ -106,10 +107,7 @@ public class AddController implements Initializable {
                 alert.setHeaderText(null);
                 alert.showAndWait();
             } catch (NumberFormatException e) {
-                Alert error = new Alert(Alert.AlertType.ERROR, "Неверные типы данных!", ButtonType.OK);
-                error.setTitle("Ошибка сохранения");
-                error.setHeaderText(null);
-                error.showAndWait();
+                Alerts.alertErrorTypes();
             }
 
 

@@ -2,7 +2,6 @@ package ru.tigran.zakaz.services;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import ru.tigran.zakaz.models.ProductModel;
 import ru.tigran.zakaz.models.WarehouseModel;
 import ru.tigran.zakaz.repositories.WarehouseRepository;
 

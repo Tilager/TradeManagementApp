@@ -1,13 +1,9 @@
 package ru.tigran.zakaz.controllers;
 
 import javafx.fxml.FXML;
-import javafx.scene.Parent;
 import javafx.scene.input.MouseEvent;
 import org.springframework.stereotype.Controller;
-import ru.tigran.zakaz.Main;
 import ru.tigran.zakaz.utils.WindowsUtils;
-
-import java.io.IOException;
 
 @Controller
 public class MainController{
@@ -23,5 +19,9 @@ public class MainController{
 
     public void salesButtonClick(MouseEvent event) {
         WindowsUtils.openNewWindow("sales/sale-view.fxml", event);
+    }
+
+    public void expenseBTNClick(MouseEvent event) {
+        WindowsUtils.openNewWindow("expenses/expenses-view.fxml", event);
     }
 }

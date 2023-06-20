@@ -2,9 +2,7 @@ package ru.tigran.zakaz.models;
 
 import jakarta.persistence.*;
 import lombok.Data;
-import org.springframework.format.annotation.DateTimeFormat;
 
-import java.io.Serializable;
 import java.util.Date;
 
 @Entity
